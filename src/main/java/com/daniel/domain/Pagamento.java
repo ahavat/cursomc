@@ -11,7 +11,15 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 
 import com.daniel.domain.enums.EstadoPagamento;
+<<<<<<< HEAD
+<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonBackReference;
+=======
+import com.fasterxml.jackson.annotation.JsonIgnore;
+>>>>>>> 84b71ea (Atualizacao: utilizando somente com JsonIgnore)
+=======
+import com.fasterxml.jackson.annotation.JsonIgnore;
+>>>>>>> master
 
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
@@ -24,7 +32,15 @@ public abstract class Pagamento implements Serializable{
 	private Integer estado;
 	
 	
+<<<<<<< HEAD
+<<<<<<< HEAD
 	@JsonBackReference
+=======
+	@JsonIgnore
+>>>>>>> 84b71ea (Atualizacao: utilizando somente com JsonIgnore)
+=======
+	@JsonIgnore
+>>>>>>> master
 	@OneToOne
 	@JoinColumn(name="pedido_id")
 	@MapsId

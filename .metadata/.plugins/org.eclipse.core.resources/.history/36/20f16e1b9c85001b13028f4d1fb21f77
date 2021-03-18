@@ -1,0 +1,9 @@
+package com.daniel.domain;
+
+public class ItemPedido {
+	
+	private Double desconto;
+	
+	
+
+}

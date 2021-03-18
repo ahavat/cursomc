@@ -1,0 +1,7 @@
+package com.daniel.domain;
+
+public class PagamentoComCartão extends Pagamento {
+	
+	
+
+}

@@ -15,7 +15,13 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonBackReference;
+=======
+>>>>>>> 84b71ea (Atualizacao: utilizando somente com JsonIgnore)
+=======
+>>>>>>> master
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
@@ -31,17 +37,29 @@ public class Produto implements Serializable {
 	private Double preco;
 	
 	
-	@JsonBackReference
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "PRODUTO_CATEGORIA",
 	joinColumns = @JoinColumn(name = "produto_id"),
 	inverseJoinColumns = @JoinColumn(name = "categoria_id"))
 	private List<Categoria> categorias = new ArrayList<>();
 	
+<<<<<<< HEAD
+<<<<<<< HEAD
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "id.produto")
 	private  Set<ItemPedido> itens = new HashSet<>();
+=======
+	@JsonIgnore
+	@OneToMany(mappedBy="id.produto")
+	private Set<ItemPedido> itens = new HashSet<>();
+>>>>>>> 84b71ea (Atualizacao: utilizando somente com JsonIgnore)
+=======
+	@JsonIgnore
+	@OneToMany(mappedBy="id.produto")
+	private Set<ItemPedido> itens = new HashSet<>();
+>>>>>>> master
 	
 	public Produto() {
 	}
@@ -56,7 +74,15 @@ public class Produto implements Serializable {
 	@JsonIgnore
 	public List<Pedido> getPedidos() {
 		List<Pedido> lista = new ArrayList<>();
+<<<<<<< HEAD
+<<<<<<< HEAD
 		for(ItemPedido x : itens) {
+=======
+		for (ItemPedido x: itens) {
+>>>>>>> 84b71ea (Atualizacao: utilizando somente com JsonIgnore)
+=======
+		for (ItemPedido x: itens) {
+>>>>>>> master
 			lista.add(x.getPedido());
 		}
 		return lista;

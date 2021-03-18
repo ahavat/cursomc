@@ -16,7 +16,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+<<<<<<< HEAD
+<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+=======
+>>>>>>> 84b71ea (Atualizacao: utilizando somente com JsonIgnore)
+=======
+>>>>>>> master
 
 @Entity
 public class Pedido implements Serializable{
@@ -33,18 +39,36 @@ public class Pedido implements Serializable{
 	@JsonManagedReference
 	@OneToOne(cascade=CascadeType.ALL, mappedBy="pedido")
 	private Pagamento pagamento;
+<<<<<<< HEAD
+<<<<<<< HEAD
 	
 	@JsonManagedReference
+=======
+
+>>>>>>> 84b71ea (Atualizacao: utilizando somente com JsonIgnore)
+=======
+
+>>>>>>> master
 	@ManyToOne
 	@JoinColumn(name="cliente_id")
 	private Cliente cliente;
 	
 	@ManyToOne
-	@JoinColumn(name="endereco_id")
+	@JoinColumn(name="endereco_de_entrega_id")
 	private Endereco enderecoDeEntrega;
 	
+<<<<<<< HEAD
+<<<<<<< HEAD
 	@OneToMany(mappedBy = "id.pedido")
 	private  Set<ItemPedido> itens = new HashSet<>();
+=======
+	@OneToMany(mappedBy="id.pedido")
+	private Set<ItemPedido> itens = new HashSet<>();
+>>>>>>> 84b71ea (Atualizacao: utilizando somente com JsonIgnore)
+=======
+	@OneToMany(mappedBy="id.pedido")
+	private Set<ItemPedido> itens = new HashSet<>();
+>>>>>>> master
 	
 	public Pedido() {
 	}
@@ -76,6 +100,15 @@ public class Pedido implements Serializable{
 	public Pagamento getPagamento() {
 		return pagamento;
 	}
+	
+	public Set<ItemPedido> getItens() {
+		return itens;
+	}
+
+	public void setItens(Set<ItemPedido> itens) {
+		this.itens = itens;
+	}
+	
 
 	public void setPagamento(Pagamento pagamento) {
 		this.pagamento = pagamento;
@@ -130,7 +163,13 @@ public class Pedido implements Serializable{
 		return true;
 	}
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 84b71ea (Atualizacao: utilizando somente com JsonIgnore)
+=======
+>>>>>>> master
 	
 	
 
