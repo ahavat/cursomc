@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.daniel.sertvices.exceptions.ObjectNotFoundException;
+import com.daniel.services.exceptions.ObjectNotFoundException;
 
 @ControllerAdvice
 public class ResourcesExceptionHandler {

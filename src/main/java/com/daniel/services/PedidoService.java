@@ -1,13 +1,13 @@
-package com.nelioalves.cursomc.services;
+package com.daniel.services;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nelioalves.cursomc.domain.Pedido;
-import com.nelioalves.cursomc.repositories.PedidoRepository;
-import com.nelioalves.cursomc.services.exceptions.ObjectNotFoundException;
+import com.daniel.domain.Pedido;
+import com.daniel.repositories.PedidoRepository;
+import com.daniel.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class PedidoService {
@@ -15,7 +15,7 @@ public class PedidoService {
 	@Autowired
 	private PedidoRepository repo;
 	
-	public Pedido buscar(Integer id) {
+	public Pedido find(Integer id) {
 		Optional<Pedido> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 				"Objeto não encontrado! Id: " + id + ", Tipo: " + Pedido.class.getName()));

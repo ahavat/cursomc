@@ -1,4 +1,4 @@
-package com.nelioalves.cursomc.domain;
+package com.daniel.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+
+
 
 @Entity
 public class Categoria implements Serializable {

@@ -1,4 +1,4 @@
-package com.nelioalves.cursomc.domain;
+package com.daniel.domain;
 
 import java.io.Serializable;
 
@@ -11,7 +11,7 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.nelioalves.cursomc.domain.enums.EstadoPagamento;
+import com.daniel.domain.enums.EstadoPagamento;
 
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)

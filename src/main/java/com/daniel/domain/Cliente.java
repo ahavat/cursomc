@@ -1,4 +1,4 @@
-package com.nelioalves.cursomc.domain;
+package com.daniel.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.nelioalves.cursomc.domain.enums.TipoCliente;
+import com.daniel.domain.enums.TipoCliente;
 
 @Entity
 public class Cliente implements Serializable {

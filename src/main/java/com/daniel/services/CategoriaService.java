@@ -1,13 +1,13 @@
-package com.nelioalves.cursomc.services;
+package com.daniel.services;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nelioalves.cursomc.domain.Categoria;
-import com.nelioalves.cursomc.repositories.CategoriaRepository;
-import com.nelioalves.cursomc.services.exceptions.ObjectNotFoundException;
+import com.daniel.domain.Categoria;
+import com.daniel.repositories.CategoriaRepository;
+import com.daniel.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class CategoriaService {
