@@ -1,15 +1,13 @@
-package com.daniel.domain;
+package com.nelioalves.cursomc.domain;
 
 import javax.persistence.Entity;
 
-import com.daniel.domain.enums.EstadoPagamento;
-
+import com.nelioalves.cursomc.domain.enums.EstadoPagamento;
 
 @Entity
 public class PagamentoComCartao extends Pagamento {
-	
 	private static final long serialVersionUID = 1L;
-	
+
 	private Integer numeroDeParcelas;
 	
 	public PagamentoComCartao() {
@@ -27,5 +25,7 @@ public class PagamentoComCartao extends Pagamento {
 	public void setNumeroDeParcelas(Integer numeroDeParcelas) {
 		this.numeroDeParcelas = numeroDeParcelas;
 	}
+	
+	
 		
 }

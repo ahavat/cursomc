@@ -1,4 +1,4 @@
-package com.daniel.domain;
+package com.nelioalves.cursomc.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,33 +14,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.daniel.domain.enums.TipoCliente;
-<<<<<<< HEAD
-<<<<<<< HEAD
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-=======
 import com.fasterxml.jackson.annotation.JsonIgnore;
->>>>>>> 84b71ea (Atualizacao: utilizando somente com JsonIgnore)
-=======
-import com.fasterxml.jackson.annotation.JsonIgnore;
->>>>>>> master
+import com.nelioalves.cursomc.domain.enums.TipoCliente;
 
 @Entity
 public class Cliente implements Serializable {
-
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	
 	private String nome;
 	private String email;
-	private String cpfoucnpj;
+	private String cpfOuCnpj;
 	private Integer tipo;
 	
-
 	@OneToMany(mappedBy="cliente")
 	private List<Endereco> enderecos = new ArrayList<>();
 	
@@ -48,27 +36,19 @@ public class Cliente implements Serializable {
 	@CollectionTable(name="TELEFONE")
 	private Set<String> telefones = new HashSet<>();
 	
-<<<<<<< HEAD
-<<<<<<< HEAD
-	@JsonBackReference
-=======
 	@JsonIgnore
->>>>>>> 84b71ea (Atualizacao: utilizando somente com JsonIgnore)
-=======
-	@JsonIgnore
->>>>>>> master
 	@OneToMany(mappedBy="cliente")
 	private List<Pedido> pedidos = new ArrayList<>();
 	
 	public Cliente() {
 	}
 
-	public Cliente(Integer id, String nome, String email, String cpfoucnpj, TipoCliente tipo) {
+	public Cliente(Integer id, String nome, String email, String cpfOuCnpj, TipoCliente tipo) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
-		this.cpfoucnpj = cpfoucnpj;
+		this.cpfOuCnpj = cpfOuCnpj;
 		this.tipo = tipo.getCod();
 	}
 
@@ -96,12 +76,12 @@ public class Cliente implements Serializable {
 		this.email = email;
 	}
 
-	public String getCpfoucnpj() {
-		return cpfoucnpj;
+	public String getCpfOuCnpj() {
+		return cpfOuCnpj;
 	}
 
-	public void setCpfoucnpj(String cpfoucnpj) {
-		this.cpfoucnpj = cpfoucnpj;
+	public void setCpfOuCnpj(String cpfOuCnpj) {
+		this.cpfOuCnpj = cpfOuCnpj;
 	}
 
 	public TipoCliente getTipo() {
@@ -127,7 +107,7 @@ public class Cliente implements Serializable {
 	public void setTelefones(Set<String> telefones) {
 		this.telefones = telefones;
 	}
-	
+
 	public List<Pedido> getPedidos() {
 		return pedidos;
 	}
@@ -159,12 +139,6 @@ public class Cliente implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}
+	}	
 
-	
-
-
-
-	
-	
 }

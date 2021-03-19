@@ -1,4 +1,4 @@
-package com.daniel.domain;
+package com.nelioalves.cursomc.domain;
 
 import java.io.Serializable;
 
@@ -10,37 +10,19 @@ import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 
-import com.daniel.domain.enums.EstadoPagamento;
-<<<<<<< HEAD
-<<<<<<< HEAD
-import com.fasterxml.jackson.annotation.JsonBackReference;
-=======
 import com.fasterxml.jackson.annotation.JsonIgnore;
->>>>>>> 84b71ea (Atualizacao: utilizando somente com JsonIgnore)
-=======
-import com.fasterxml.jackson.annotation.JsonIgnore;
->>>>>>> master
+import com.nelioalves.cursomc.domain.enums.EstadoPagamento;
 
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
-public abstract class Pagamento implements Serializable{
-
+public abstract class Pagamento implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	private Integer id;
 	private Integer estado;
-	
-	
-<<<<<<< HEAD
-<<<<<<< HEAD
-	@JsonBackReference
-=======
+
 	@JsonIgnore
->>>>>>> 84b71ea (Atualizacao: utilizando somente com JsonIgnore)
-=======
-	@JsonIgnore
->>>>>>> master
 	@OneToOne
 	@JoinColumn(name="pedido_id")
 	@MapsId
