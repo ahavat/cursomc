@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+C:\temp\@cursomc\cursomc\.metadata\.plugins\org.eclipse.jdt.core
-1067094681.index
-1760652724.index
