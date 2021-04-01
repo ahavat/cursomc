@@ -15,13 +15,10 @@ import com.daniel.domain.Produto;
 
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Integer> {
-	
-	// https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
-	@Transactional(readOnly=true)
-	@Query("SELECT DISTINCT obj FROM Produto obj INNER JOIN obj.categorias cat WHERE obj.nome LIKE %:nome% AND cat IN :categorias")
-	Page<Produto> findDistinctByNomeContainingIgnoreCaseAndCategoriasIn(
-	@Param("nome") String nome,
-	@Param("categorias") List<Categoria> categorias,
-	Pageable pageRequest);
 
+	// https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
+	@Transactional(readOnly = true)
+	@Query("SELECT DISTINCT obj FROM Produto obj INNER JOIN obj.categorias cat WHERE obj.nome LIKE %:nome% AND cat IN :categorias")
+	Page<Produto> findDistinctByNomeContainingIgnoreCaseAndCategoriasIn(@Param("nome") String nome,
+			@Param("categorias") List<Categoria> categorias, Pageable pageRequest);
 }
