@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.daniel.domain.Categoria;
 import com.daniel.domain.Pedido;
-import com.daniel.dto.CategoriaDTO;
 import com.daniel.services.PedidoService;
 
 @RestController
