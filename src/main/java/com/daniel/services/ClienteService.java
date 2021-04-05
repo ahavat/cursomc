@@ -16,12 +16,15 @@ import org.springframework.stereotype.Service;
 import com.daniel.domain.Cidade;
 import com.daniel.domain.Cliente;
 import com.daniel.domain.Endereco;
+import com.daniel.domain.enums.Perfil;
 import com.daniel.domain.enums.TipoCliente;
 import com.daniel.dto.ClienteDTO;
 import com.daniel.dto.ClienteNewDTO;
 import com.daniel.repositories.CidadeRepository;
 import com.daniel.repositories.ClienteRepository;
 import com.daniel.repositories.EnderecoRepository;
+import com.daniel.security.UserSS;
+import com.daniel.services.exceptions.AuthorizationException;
 import com.daniel.services.exceptions.DataIntegrityException;
 import com.daniel.services.exceptions.ObjectNotFoundException;
 
@@ -35,6 +38,12 @@ public class ClienteService {
 	private ClienteRepository repo;
 
 	public Cliente find(Integer id) {
+		
+		UserSS user = UserService.authenticated();
+		if (user == null || user.hasRole(Perfil.ADMIN) && !id.equals(user.getId())) {
+			throw new AuthorizationException("Acesso negado");
+		}
+			
 		Optional<Cliente> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 				"Objeto não encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));
