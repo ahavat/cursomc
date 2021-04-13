@@ -21,7 +21,7 @@ import com.daniel.services.UserService;
 public class AuthResource {
 
 	@Autowired
-	private JWTUtil jwtUtil;
+	private JWTUtil jwtUtil; 
 	
 	@Autowired
 	private AuthService service;
@@ -33,7 +33,7 @@ public class AuthResource {
 		response.addHeader("Authorization", "Bearer " + token);
 		return ResponseEntity.noContent().build();
 	}
-	
+	 
 	@RequestMapping(value = "/forgot", method = RequestMethod.POST)
 	public ResponseEntity<Void> forgot(@Valid @RequestBody EmailDTO objDto) {
 		service.sendNewPassword(objDto.getEmail());

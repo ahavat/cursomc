@@ -16,6 +16,7 @@ public class Cidade implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
+	
 	private String nome;
 	
 	@ManyToOne
@@ -79,8 +80,5 @@ public class Cidade implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}
-	
-	
-	
+	}	
 }
