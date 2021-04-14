@@ -175,7 +175,4 @@ public class Cliente implements Serializable {
 			return false;
 		return true;
 	}
-
-	
-
 }
